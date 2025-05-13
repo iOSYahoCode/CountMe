@@ -13,24 +13,30 @@ struct CounterView: View {
     
     var body: some View {
         VStack() {
-            Text("CountMe")
+            Text("📈CountMe!")
                 .font(.title)
+                .padding(.top)
             
             Spacer()
             
             Text("Target: \(viewModel.targetScore)")
+                .fontWeight(.light)
             Text("\(viewModel.score)")
                 .font(.system(size: 100, weight: .light))
             
             Spacer()
             
-            Button("Add one") {
+            Button(action: {
                 viewModel.increment()
+            }) {
+                Text("Add one")
+                    .frame(width: 200, height: 50)
+                    .foregroundStyle(.white)
+                    .background(colorScheme == .dark ? .gray : .black)
+                    .clipShape(.buttonBorder)
+                    .padding(.bottom)
             }
-            .frame(width: 200, height: 50)
-            .foregroundStyle(.white)
-            .background(colorScheme == .dark ? .gray : .black)
-            .clipShape(.buttonBorder)
+            
         }
         .onAppear(){
             viewModel.reset()
