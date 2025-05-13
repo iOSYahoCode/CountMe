@@ -20,7 +20,7 @@ A simple yet elegant counter app built with SwiftUI that helps you keep track of
 
 ## Requirements
 
-- iOS 18.4+
+- iOS 17.6+
 - Xcode 16.3+
 - Swift 5.0+
 
