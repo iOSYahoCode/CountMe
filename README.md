@@ -13,10 +13,10 @@ A simple yet elegant counter app built with SwiftUI that helps you keep track of
 ## Screenshots
 
 ### Light Mode
-[Add your light mode screenshot here]
+![Light mode view(docs/images/light_preview.png)]
 
 ### Dark Mode
-[Add your dark mode screenshot here]
+![Dark mode view(docs/images/light_preview.png)]
 
 ## Requirements
 
