@@ -31,7 +31,7 @@ A simple yet elegant counter app built with SwiftUI that helps you keep track of
 git clone https://github.com/iOSYahoCode/CountMe.git
 ```
 
-2. Open `Hello Swift UI.xcodeproj` in Xcode
+2. Open `CountMe.xcodeproj` in Xcode
 
 3. Build and run the project (⌘R)
 
