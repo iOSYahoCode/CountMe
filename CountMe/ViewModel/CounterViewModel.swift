@@ -15,10 +15,16 @@ final public class CounterViewModel: ObservableObject {
         didSet { model.score = score}
     }
     
-    init(model: CounterModel = CounterModel()) {
+    init(model: CounterModel = CounterModel(), targetScore customTargetScore: Int = 0) {
         self.model = model
         self.score = model.score
-        self.targetScore = model.targetScore
+        if customTargetScore > 0 {
+            self.targetScore = customTargetScore
+            model.targetScore = customTargetScore
+        } else {
+            self.targetScore = model.targetScore
+        }
+        setNewRandomTargetScore()
     }
     
     public func increment() {
@@ -26,11 +32,11 @@ final public class CounterViewModel: ObservableObject {
         
         if checkIsWon() {
             reset()
+            setNewRandomTargetScore()
         }
     }
     
     public func reset() {
-        setNewRandomTargetScore()
         score = 0
     }
     
