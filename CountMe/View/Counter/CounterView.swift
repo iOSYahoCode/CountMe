@@ -8,18 +8,18 @@
 import SwiftUI
 
 struct CounterView: View {
-    @Environment(\.colorScheme) var colorScheme
+    @Environment(\.colorScheme) private var colorScheme
     @StateObject private var viewModel = CounterViewModel()
     
     var body: some View {
-        VStack() {
-            Text("📈CountMe!")
+        VStack {
+            Text(CounterViewConstants.title)
                 .font(.title)
                 .padding(.top)
             
             Spacer()
             
-            Text("Target: \(viewModel.targetScore)")
+            Text("\(CounterViewConstants.targetPrefix)\(viewModel.targetScore)")
                 .fontWeight(.light)
             Text("\(viewModel.score)")
                 .font(.system(size: 100, weight: .light))
@@ -30,7 +30,7 @@ struct CounterView: View {
                 Button(action: {
                     viewModel.increment()
                 }) {
-                    Text("Add one")
+                    Text(CounterViewConstants.addButtonTitle)
                         .frame(width: 200, height: 50)
                         .foregroundStyle(.white)
                         .background(colorScheme == .dark ? .gray : .black)
@@ -42,7 +42,7 @@ struct CounterView: View {
                             viewModel.reset()
                         }
                     } label: {
-                        Image(systemName: "trash.fill")
+                        Image(systemName: CounterViewConstants.trashIcon)
                             .frame(width: 35, height: 50)
                             .foregroundStyle(.white)
                             .background(colorScheme == .dark ? .gray : .black)
@@ -54,8 +54,6 @@ struct CounterView: View {
             }
             .padding(.bottom)
             .animation(.easeInOut(duration: 0.3), value: viewModel.score)
-            
-            
         }
         .onAppear(){
             viewModel.reset()

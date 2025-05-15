@@ -6,7 +6,7 @@
 //
 
 import Foundation
-class CounterModel {
+final public class CounterModel {
     var targetScore: Int = 0
     var score: Int = 0
 }

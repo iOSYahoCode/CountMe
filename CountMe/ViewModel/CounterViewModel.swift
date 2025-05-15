@@ -6,17 +6,13 @@
 //
 
 import Foundation
-public class CounterViewModel: ObservableObject {
+final public class CounterViewModel: ObservableObject {
     var model: CounterModel
     @Published var targetScore : Int = 0 {
-        didSet {
-            model.targetScore = targetScore
-        }
+        didSet { model.targetScore = targetScore }
     }
     @Published var score : Int = 0 {
-        didSet {
-            model.score = score
-        }
+        didSet { model.score = score}
     }
     
     init(model: CounterModel = CounterModel()) {
